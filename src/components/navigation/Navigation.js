@@ -10,12 +10,12 @@ class Navigation extends Component {
                             <a href="#" className="brand-logo white-text">Logo</a>
                             <ul className="hide-on-med-and-down right">
                                 <li>
-                                    <div className="center row">
-                                        <div className="col s12 " >
-                                            <div className="row" id="topbarsearch">
+                                    <div className="center row" style={{marginBottom: 0}}>
+                                        <div className="col s12" >
+                                            <div className="row" style={{marginBottom: 0}}>
                                                 <div className="input-field col s6 s12 white-text">
                                                     <i className="white-text material-icons prefix">search</i>
-                                                    <input type="text" placeholder="search" id="autocomplete-input" className="autocomplete white-text" />
+                                                    <input type="text" placeholder="search" className="autocomplete white-text" />
                                                 </div>
                                             </div>
                                         </div>
