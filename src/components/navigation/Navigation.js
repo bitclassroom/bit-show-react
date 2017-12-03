@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 
 class Navigation extends Component {
     render() {
@@ -7,7 +8,7 @@ class Navigation extends Component {
                 <div className="container">
                     <nav className="light-blue darken-4 z-depth-0">
                         <div className="nav-wrapper">
-                            <a href="#" className="brand-logo white-text">Logo</a>
+                            <Link to="/" className="brand-logo white-text">BitShow</Link>
                             <ul className="hide-on-med-and-down right">
                                 <li>
                                     <div className="center row" style={{marginBottom: 0}}>
@@ -15,7 +16,7 @@ class Navigation extends Component {
                                             <div className="row" style={{marginBottom: 0}}>
                                                 <div className="input-field col s6 s12 white-text">
                                                     <i className="white-text material-icons prefix">search</i>
-                                                    <input type="text" placeholder="search" className="autocomplete white-text" />
+                                                    <input type="text" placeholder="Search Shows" className="autocomplete white-text" />
                                                 </div>
                                             </div>
                                         </div>

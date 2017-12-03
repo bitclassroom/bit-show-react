@@ -2,16 +2,12 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 
 class ShowsList extends Component {
-    constructor (props) {
-        super(props);
-    }
-
     renderCard(show) {
         return (
             <div className="col s12 m4" key={show}>
                 <div className="card">
                     <div className="card-image">
-                        <img src="https://goo.gl/SZTN5q" />
+                        <img src="https://goo.gl/SZTN5q" alt="" />
                         <span className="card-title">{show}</span>
                     </div>
                     <div className="card-content">
