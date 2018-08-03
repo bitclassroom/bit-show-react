@@ -5,17 +5,17 @@ import ActorCard from './ActorCard'
 import ActorListItem from './ActorListItem'
 
 export const CastGrid = ({ casts }) => {
-    const castGrid = casts.map(actor => <ActorCard actor={actor} />)
+    const castGrid = casts.map((actor, index) => <ActorCard actor={actor} key={index} />)
 
     return <div className="row">{castGrid}</div>
 }
 
 export const CastList = ({ casts }) => {
-    const castList = casts.map(actor => <ActorListItem actor={actor} />)
+    const castList = casts.map((actor, index) => <ActorListItem actor={actor} key={index} />)
 
     return (
         <div className="row">
-            <ul class="collection">{castList}</ul>
+            <ul className="collection">{castList}</ul>
         </div>
     )
 }

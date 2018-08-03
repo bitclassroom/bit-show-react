@@ -9,6 +9,11 @@ const Header = ({ title }) => (
                     <Link to="/" className="brand-logo card-title">
                         {title}
                     </Link>
+                    <ul className="right">
+                        <li>
+                            <Link to="/about">About</Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

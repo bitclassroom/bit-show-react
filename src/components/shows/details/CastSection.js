@@ -14,9 +14,9 @@ class CastSection extends Component {
 
     renderIcon() {
         return this.state.isGrid ? (
-            <i class="medium material-icons">view_list</i>
+            <i className="medium material-icons">view_list</i>
         ) : (
-            <i class="medium material-icons">view_module</i>
+            <i className="medium material-icons">view_module</i>
         )
     }
 
