@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ActorCard = ({ actor }) => (
-    <div className="col s12 m2 animation-flipInY">
+    <div className="col s12 m2">
         <div className="card ">
             <div className="card-image">
                 <img className="z-depth-2" src={actor.photo} alt="" />
