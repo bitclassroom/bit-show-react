@@ -1,4 +1,4 @@
-class Cast {
+class Person {
     constructor({ id, name, image }) {
         this.id = id
         this.name = name
@@ -6,4 +6,4 @@ class Cast {
     }
 }
 
-export default Cast
+export default Person

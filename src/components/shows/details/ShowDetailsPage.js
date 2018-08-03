@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { showService } from '../../../services/ShowService'
-import GenreChipsList from './GenreChipsList'
-import CastList from './CastList'
 import _ from 'lodash'
+
+import { showService } from '../../../services/ShowService'
+
+import CastList from './CastList'
+import GenreChipsList from './GenreChipsList'
+import Loader from '../../partials/Loader/Loader'
 
 class ShowDetailsPage extends Component {
     constructor(props) {
@@ -15,7 +18,6 @@ class ShowDetailsPage extends Component {
     componentDidMount() {
         const { id } = this.props.match.params
         showService.fetchSingleShow(id).then(show => {
-            console.log(show)
             this.setState({ show })
         })
     }
@@ -24,7 +26,7 @@ class ShowDetailsPage extends Component {
         const { show } = this.state
 
         if (_.isEmpty(show)) {
-            return <p>Loading...</p>
+            return <Loader isLoading />
         }
 
         const { name, image, desc, genres, casts } = show
@@ -42,8 +44,8 @@ class ShowDetailsPage extends Component {
                 <div className="col s6 offset-s1">
                     <h3>{name.toUpperCase()}</h3>
                     <br />
-                    <GenreChipsList items={genres} />
-                    <p class="flow-text">{desc}</p>
+                    <GenreChipsList genres={genres} />
+                    <p className="flow-text">{desc}</p>
                 </div>
                 <div className="col s12">
                     <hr />

@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <Fragment>
-                <Header />
+                <Header title="BIT Shows" />
                 <Main />
                 <Footer />
             </Fragment>

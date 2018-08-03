@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
+
+import { showService } from '../../services/ShowService'
+
 import ShowsGrid from './ShowsGrid'
 import Loader from './../partials/Loader/Loader'
-import { showService } from '../../services/ShowService'
-import _ from 'lodash'
 
 class ShowsPage extends Component {
     constructor(props) {
@@ -19,18 +21,17 @@ class ShowsPage extends Component {
                 this.setState({ shows })
             })
             .catch(error => {
-                throw new Error('')
+                throw new Error(error.message)
             })
     }
 
     render() {
         const { shows } = this.state
-
-        if (_.isEmpty(shows)) {
-            return <Loader />
-        }
-
-        return <ShowsGrid shows={shows} />
+        return (
+            <Loader isLoading={_.isEmpty(shows)}>
+                <ShowsGrid shows={shows} />
+            </Loader>
+        )
     }
 }
 

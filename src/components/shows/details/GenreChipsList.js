@@ -1,7 +1,7 @@
 import React from 'react'
 
-const GenreChipsList = ({ items = [] }) => {
-    return items.map(item => <div class="card chip">{item}</div>)
+const GenreChipsList = ({ genres = [] }) => {
+    return genres.map(genre => <div className="card chip">{genre}</div>)
 }
 
 export default GenreChipsList
