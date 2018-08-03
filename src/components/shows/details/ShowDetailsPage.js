@@ -3,9 +3,9 @@ import _ from 'lodash'
 
 import { showService } from '../../../services/ShowService'
 
-import CastList from './CastList'
-import GenreChipsList from './GenreChipsList'
 import Loader from '../../partials/Loader/Loader'
+import ShowDetailsSection from './ShowDetailsSection'
+import CastSection from './CastSection'
 
 class ShowDetailsPage extends Component {
     constructor(props) {
@@ -29,28 +29,11 @@ class ShowDetailsPage extends Component {
             return <Loader isLoading />
         }
 
-        const { name, image, desc, genres, casts } = show
+        const { casts } = show
         return (
             <div className="row">
-                <br />
-                <br />
-                <div className="col s5">
-                    <div className="card">
-                        <div className="card-image">
-                            <img src={image.medium} alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="col s6 offset-s1">
-                    <h3>{name.toUpperCase()}</h3>
-                    <br />
-                    <GenreChipsList genres={genres} />
-                    <p className="flow-text">{desc}</p>
-                </div>
-                <div className="col s12">
-                    <hr />
-                    <CastList casts={casts} />
-                </div>
+                <ShowDetailsSection {...show} />
+                <CastSection casts={casts} />
             </div>
         )
     }
