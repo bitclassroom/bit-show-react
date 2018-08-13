@@ -18,8 +18,12 @@
         "precommit": "pretty-quick --staged"
     },
     "devDependencies": {
+        "enzyme": "~3.4.1",
+        "enzyme-adapter-react-16": "~1.2.0",
         "husky": "~0.14.3",
-        "prettier": "~1.14.0",
+        "jest-enzyme": "~6.0.0",
+        "moxios": "~0.4.0",
+        "prettier": "~1.14.2",
         "pretty-quick": "~1.6.0"
     }
 }
