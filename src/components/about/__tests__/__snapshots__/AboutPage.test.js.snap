@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutPage should match the snapshot 1`] = `
+<div>
+  <h4>
+    About BIT Shows
+  </h4>
+  <p
+    className="flow-text"
+  >
+    This is some about description
+  </p>
+</div>
+`;

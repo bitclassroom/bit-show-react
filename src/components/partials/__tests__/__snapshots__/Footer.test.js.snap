@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match the snapshot 1`] = `
+<footer
+  className="page-footer blue darken-2"
+>
+  <div
+    className="footer-copyright"
+  >
+    <div
+      className="container"
+    >
+      © 
+      2018
+       Copyright BIT
+    </div>
+  </div>
+</footer>
+`;
