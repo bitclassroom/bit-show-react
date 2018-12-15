@@ -5,10 +5,10 @@
     "dependencies": {
         "lodash": "~4.17.10",
         "materialize-css": "~1.0.0-beta",
-        "react": "~16.4.2",
-        "react-dom": "~16.4.2",
+        "react": "~16.6.3",
+        "react-dom": "~16.6.3",
         "react-router-dom": "~4.3.1",
-        "react-scripts": "~1.1.4"
+        "react-scripts": "~2.1.1"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -18,8 +18,8 @@
         "precommit": "pretty-quick --staged"
     },
     "devDependencies": {
-        "husky": "~0.14.3",
-        "prettier": "~1.14.0",
-        "pretty-quick": "~1.6.0"
+        "husky": "~1.2.1",
+        "prettier": "~1.15.3",
+        "pretty-quick": "~1.8.0"
     }
 }
