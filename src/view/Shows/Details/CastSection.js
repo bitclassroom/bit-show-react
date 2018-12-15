@@ -28,9 +28,9 @@ class CastSection extends Component {
                     <hr />
                     <div className="row">
                         <h4 className="left">Actors</h4>
-                        <a className="right" href="" onClick={this.changeView}>
+                        <span className="right" onClick={this.changeView}>
                             {this.renderIcon()}
-                        </a>
+                        </span>
                     </div>
                     <CastList casts={casts} isGrid={this.state.isGrid} />
                 </div>

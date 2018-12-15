@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ShowCard = ({ show }) => (
-    <div className="col s12 m3">
+    <div className="col s12 m4">
         <div className="card hoverable">
             <div className="card-image">
                 <img src={show.image.medium} alt="" />

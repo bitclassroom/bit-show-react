@@ -4,8 +4,8 @@ import _ from 'lodash'
 import { showService } from '../../services/ShowService'
 
 import ShowsGrid from './ShowsGrid'
-import Loader from './../partials/Loader/Loader'
-import SearchBar from '../partials/SearchBar'
+import Loader from '../components/Loader/Loader'
+import SearchBar from '../components/SearchBar'
 
 class ShowsPage extends Component {
     constructor(props) {
@@ -16,15 +16,13 @@ class ShowsPage extends Component {
         }
     }
 
-    componentDidMount() {
-        showService
-            .fetchPopularShows()
-            .then(shows => {
-                this.setState({ shows, filteredShows: shows })
-            })
-            .catch(error => {
-                throw new Error(error.message)
-            })
+    async componentDidMount() {
+        try {
+            const shows = await showService.fetchPopularShows()
+            this.setState({ shows, filteredShows: shows })
+        } catch (error) {
+            throw new Error(error.message)
+        }
     }
 
     searchShows = (searchText, users) => {

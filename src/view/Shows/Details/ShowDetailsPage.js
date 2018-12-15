@@ -3,23 +3,24 @@ import _ from 'lodash'
 
 import { showService } from '../../../services/ShowService'
 
-import Loader from '../../partials/Loader/Loader'
+import Loader from '../../components/Loader/Loader'
 import ShowDetailsSection from './ShowDetailsSection'
 import CastSection from './CastSection'
 
 class ShowDetailsPage extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             show: null
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         const { id } = this.props.match.params
-        showService.fetchSingleShow(id).then(show => {
-            this.setState({ show })
-        })
+        const show = await showService.fetchSingleShow(id)
+
+        this.setState({ show })
     }
 
     render() {
@@ -30,9 +31,10 @@ class ShowDetailsPage extends Component {
         }
 
         const { casts } = show
+
         return (
             <div className="row">
-                <ShowDetailsSection {...show} />
+                <ShowDetailsSection show={show} />
                 <CastSection casts={casts} />
             </div>
         )

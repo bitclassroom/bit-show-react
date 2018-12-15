@@ -1,10 +1,12 @@
 import React from 'react'
+
+import Divider from '../../components/Divider'
+
 import GenreChipsList from './GenreChipsList'
 
-const ShowDetailsSection = ({ name, image, desc, genres }) => (
-    <React.Fragment>
-        <br />
-        <br />
+const ShowDetailsSection = ({ show: { image, displayName, genres, htmlDescription } }) => (
+    <>
+        <Divider />
         <div className="col s5">
             <div className="card">
                 <div className="card-image">
@@ -13,12 +15,11 @@ const ShowDetailsSection = ({ name, image, desc, genres }) => (
             </div>
         </div>
         <div className="col s6 offset-s1">
-            <h3>{name.toUpperCase()}</h3>
-            <br />
+            <h3>{displayName}</h3>
             <GenreChipsList genres={genres} />
-            <p className="flow-text">{desc}</p>
+            <p className="flow-text" dangerouslySetInnerHTML={htmlDescription} />
         </div>
-    </React.Fragment>
+    </>
 )
 
 export default ShowDetailsSection

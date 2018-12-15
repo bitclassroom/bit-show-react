@@ -5,8 +5,16 @@ export default class Show {
         this.genres = genres
         this.image = image
         this.rating = rating.average
-        this.desc = summary.replace(/(<([^>]+)>)/gi, '')
+        this.description = summary
         this.casts = []
         this.seasons = []
+    }
+
+    get displayName() {
+        return this.name.toUpperCase()
+    }
+
+    get htmlDescription() {
+        return { __html: this.description }
     }
 }

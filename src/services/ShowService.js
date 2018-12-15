@@ -1,4 +1,4 @@
-import { apiService } from '../shared/apiService'
+import { API } from '../shared/API'
 
 import Show from '../models/Show'
 import Actor from '../models/Actor'
@@ -14,13 +14,13 @@ class ShowService {
                 .splice(0, 50)
         }
 
-        return apiService.get(requestPath).then(adaptShows)
+        return API.get(requestPath).then(adaptShows)
     }
 
     fetchSingleShow(id) {
         const requestPath = `/shows/${id}?embed[]=seasons&embed[]=cast`
 
-        return apiService.get(requestPath).then(showData => {
+        return API.get(requestPath).then(showData => {
             const actorsList = showData._embedded.cast.map(({ person, character }) => {
                 return new Actor(person, character)
             })

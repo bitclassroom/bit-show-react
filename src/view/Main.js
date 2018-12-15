@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import ShowsPage from './shows/ShowsPage'
-import ShowDetailsPage from './shows/details/ShowDetailsPage'
-import AboutPage from './about/AboutPage'
+import ShowsPage from './Shows/ShowsPage'
+import ShowDetailsPage from './Shows/Details/ShowDetailsPage'
+import AboutPage from './About/AboutPage'
 
 const Main = () => (
     <main className="container">
