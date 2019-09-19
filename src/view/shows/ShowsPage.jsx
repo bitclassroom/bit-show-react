@@ -1,10 +1,10 @@
 import React, { Component, Suspense } from 'react'
 import _ from 'lodash'
 
-import { showService } from '../../services/ShowService'
+import { showService } from 'services/ShowService'
 
-import Loader from '../components/Loader/Loader'
-import SearchBar from '../components/SearchBar'
+import Loader from 'components/Loader/Loader'
+import SearchBar from 'components/SearchBar'
 
 import ShowsGrid from './ShowsGrid'
 

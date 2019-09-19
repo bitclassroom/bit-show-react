@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import CastList from './CastView'
 
 class CastSection extends Component {

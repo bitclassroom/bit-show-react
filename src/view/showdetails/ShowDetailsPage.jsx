@@ -1,9 +1,9 @@
 import React, { useEffect, useState, Suspense } from 'react'
 import _ from 'lodash'
 
-import { showService } from '../../../services/ShowService'
+import { showService } from 'services/ShowService'
 
-import Loader from '../../components/Loader/Loader'
+import Loader from 'components/Loader/Loader'
 
 import ShowDetailsSection from './ShowDetailsSection'
 

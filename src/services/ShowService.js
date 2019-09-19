@@ -1,7 +1,7 @@
-import { API } from '../shared/API'
+import { API } from 'shared/API'
 
-import Show from '../models/Show'
-import Actor from '../models/Actor'
+import Show from 'models/Show'
+import Actor from 'models/Actor'
 
 class ShowService {
     fetchPopularShows() {

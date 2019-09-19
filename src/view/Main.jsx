@@ -1,11 +1,11 @@
 import React, { Suspense, lazy } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Loader from './components/Loader/Loader'
+import Loader from 'components/Loader/Loader'
 
-const ShowsPage = lazy(() => import('./Shows/ShowsPage'))
-const ShowDetailsPage = lazy(() => import('./Shows/Details/ShowDetailsPage'))
-const AboutPage = lazy(() => import('./About/AboutPage'))
+const ShowsPage = lazy(() => import('./shows/ShowsPage'))
+const ShowDetailsPage = lazy(() => import('./showdetails/ShowDetailsPage'))
+const AboutPage = lazy(() => import('./about/AboutPage'))
 
 const Main = () => (
     <main className="container">
