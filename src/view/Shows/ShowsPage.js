@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
 import _ from 'lodash'
 
 import { showService } from '../../services/ShowService'
 
-import ShowsGrid from './ShowsGrid'
 import Loader from '../components/Loader/Loader'
 import SearchBar from '../components/SearchBar'
+
+import ShowsGrid from './ShowsGrid'
 
 class ShowsPage extends Component {
     constructor(props) {
@@ -39,10 +40,14 @@ class ShowsPage extends Component {
     render() {
         const { filteredShows, shows } = this.state
         return (
-            <Loader isLoading={_.isEmpty(shows)}>
-                <SearchBar onSearch={this.searchShows} />
-                <ShowsGrid shows={filteredShows} />
-            </Loader>
+            <>
+                {!_.isEmpty(shows) && (
+                    <Suspense fallback={<Loader isLoading />}>
+                        <SearchBar onSearch={this.searchShows} />
+                        <ShowsGrid shows={filteredShows} />
+                    </Suspense>
+                )}
+            </>
         )
     }
 }

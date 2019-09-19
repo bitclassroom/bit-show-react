@@ -1,46 +1,38 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
-class SearchBar extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            textInput: ''
-        }
-    }
+const SearchBar = props => {
+    const { onSearch = f => f } = props
 
-    static defaultProps = {
-        onSearch: f => f
-    }
+    const inputRef = useRef()
+    const [textInput, setTextInput] = useState('')
 
-    onInputHandler = ({ target }) => {
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
+
+    const onInputHandler = ({ target }) => {
         const textInput = target.value
-        const { onSearch } = this.props
 
-        this.setState({ textInput })
-
+        setTextInput(textInput)
         onSearch(textInput)
     }
 
-    render() {
-        const { onInputHandler } = this
-        const { textInput } = this.state
-
-        return (
-            <form className="col s12">
-                <div className="input-field col s12">
-                    <i className="material-icons prefix">search</i>
-                    <input
-                        onChange={onInputHandler}
-                        value={textInput}
-                        id="search"
-                        type="search"
-                        className="validate"
-                        placeholder="Search shows"
-                    />
-                </div>
-            </form>
-        )
-    }
+    return (
+        <form className="col s12">
+            <div className="input-field col s12">
+                <i className="material-icons prefix">search</i>
+                <input
+                    ref={inputRef}
+                    onChange={onInputHandler}
+                    value={textInput}
+                    id="search"
+                    type="search"
+                    className="validate"
+                    placeholder="Search shows"
+                />
+            </div>
+        </form>
+    )
 }
 
-export default SearchBar
+export default React.memo(SearchBar)
