@@ -46,7 +46,7 @@ const ShowDetailsPage = props => {
                 </label>
             </div>
             {showCast && (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader isLoading />}>
                     <CastSection casts={casts} />
                 </Suspense>
             )}

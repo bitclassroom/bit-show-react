@@ -22,4 +22,4 @@ const ShowDetailsSection = ({ show: { image, displayName, genres, htmlDescriptio
     </>
 )
 
-export default ShowDetailsSection
+export default React.memo(ShowDetailsSection)

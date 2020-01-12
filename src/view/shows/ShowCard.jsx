@@ -14,4 +14,4 @@ const ShowCard = ({ show }) => (
     </div>
 )
 
-export default ShowCard
+export default React.memo(ShowCard)
